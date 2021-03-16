@@ -8,7 +8,7 @@ def price(ticker: str, _period: str = 'max'):
     hist = stock.history(period=_period, debug=False)
     if hist.empty:
         raise Exception('No ticker info')
-    print(hist)
+    print(hist[['Open','Close']])
 
 def main():
     price(sys.argv[1])
